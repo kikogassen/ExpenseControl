@@ -8,6 +8,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
 
 import com.kikog.expensecontrol.R;
+import com.kikog.expensecontrol.model.DBHelper;
 import com.kikog.expensecontrol.view.fragment.AddFragment;
 import com.kikog.expensecontrol.view.fragment.DashboardFragment;
 
@@ -23,6 +24,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main_activity);
+
+        DBHelper.getHelper(getApplicationContext());
         BottomNavigationView navView = findViewById(R.id.nav_view);
         navView.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
 
